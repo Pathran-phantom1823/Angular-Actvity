@@ -15,8 +15,8 @@
                             <select [(ngModel)]="gender" class="browser-default custom-select">
                                 <option *ngFor="let item of list" [value]="item">{{item}}</option>
                             </select><br><br>
-                            <button (click)="onChange()" type="button"  mat-raised-button color="primary">Send</button>
-                            <p *ngIf="childMessage">Notification: {{childMessage}}</p>
+                            <button (click)="onChange()" type="button"  mat-raised-button color="primary">Send</button><br>
+                            <h5 *ngIf="childMessage" class="notif">{{childMessage}}!!</h5>
                         </div>
                     </mat-card>
                     <mat-card class="card">
