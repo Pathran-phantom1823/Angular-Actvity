@@ -1,6 +1,6 @@
 <div>
     <mat-card class="card">
-        <div> 
+        <div>
             <h5>Child Component</h5>
             <hr>
             <h1 class="greeting"></h1>
@@ -8,8 +8,39 @@
             <p>Enrolled: {{enr}}</p>
             <p>Gender: {{gend}}</p>
             <hr>
-            <button (click)= "onChange(childMessage)"  type="button" mat-raised-button color="primary">Approved</button>
-            <button (click)= "disapproved(childMessage)" type="button" mat-raised-button color="warn">Disapproved</button>
+            <button (click)="onChange(childMessage)" type="button" mat-raised-button color="primary">Approved</button>
+            <button (click)="disapproved(childMessage)" type="button" mat-raised-button color="warn">Disapproved</button>
         </div>
     </mat-card>
+    <mat-card class="card">
+        <div>
+            <h5>Approved Students:</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Enrolled</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let each of students">
+                        <td>{{each.id}}</td>
+                        <td>{{each.fullname}}</td>
+                        <td>{{each.enrolled}}</td>
+                        <td>{{each.gender}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card>
+    <!-- <mat-card class="card">
+        <h5>Disapproved Students:</h5>
+        <div>
+            <ul>
+                <li *ngFor="let each of disapprovedstudents">{{each}}</li>
+            </ul>
+        </div>
+    </mat-card> -->
 </div>

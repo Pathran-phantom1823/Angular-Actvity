@@ -16,6 +16,7 @@ export class SenderComponent implements OnInit {
   public list = ["Male", "Female"];
   @Output() parentEvent = new EventEmitter();
   
+  
 
   onChange() {
     console.log('clik')

@@ -16,6 +16,7 @@ import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './receiver/receiver.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -41,6 +42,7 @@ import { ReceiverComponent } from './receiver/receiver.component';
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

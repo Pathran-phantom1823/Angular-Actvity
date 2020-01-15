@@ -16,15 +16,42 @@
                                 <option *ngFor="let item of list" [value]="item">{{item}}</option>
                             </select><br><br>
                             <button (click)="onChange()" type="button"  mat-raised-button color="primary">Send</button>
-                            <p>Notification: {{childMessage}}</p>
+                            <p *ngIf="childMessage">Notification: {{childMessage}}</p>
+                        </div>
+                    </mat-card>
+                    <mat-card class="card">
+                        <h5>Disapproved Students:</h5>
+                        <div>
+                                <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Enrolled</th>
+                                                <th>Gender</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr  *ngFor="let each of disapprovedstudents">
+                                                <td>{{each.id}}</td>
+                                                <td>{{each.fullname}}</td>
+                                                <td>{{each.enrolled}}</td>
+                                                <td>{{each.gender}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            <!-- <ul>
+                                <li *ngFor="let each of disapprovedstudents">{{each}}</li>
+                            </ul> -->
                         </div>
                     </mat-card>
                 </div>
                 <div class="col-sm-4">
-                    <app-receiver (childEvent)="childMessage=$event" [fname]="fname" [enr]="enr" [gend]="gend"></app-receiver>
+                    <app-receiver (infoEvent) = "disapprovedstudents = $event" (childEvent)="childMessage=$event" [fname]="fname" [enr]="enr" [gend]="gend"></app-receiver>
                 </div>
 
             </div>
         </div>
     </mat-card>
+    
 </div>
