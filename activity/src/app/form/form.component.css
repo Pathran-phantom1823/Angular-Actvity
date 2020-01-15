@@ -1,0 +1,44 @@
+.form{
+    /* max-width: 400px;
+    margin-left: 70vh; */
+    background-color: yellowgreen;
+    position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+    
+}
+
+@-webkit-keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue; left:0px; top:200px;}
+    75%  {background-color:green;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; }
+    50%  {background-color:blue; left:0px; top:200px;}
+    75%  {background-color:green; }
+    100% {background-color:red; left:0px; top:0px;}
+  }
+
+form{
+    justify-content: center;
+    display: flex;
+}
+#formcard{
+    margin-top:10%;
+    max-width: 400px;
+    margin-left: 70vh;
+    /* background-color: yellowgreen */
+}
+h1{
+    color:white;
+    justify-content: center;
+    display: flex;
+}

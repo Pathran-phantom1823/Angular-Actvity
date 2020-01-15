@@ -1,0 +1,15 @@
+<div>
+    <mat-card class="card">
+        <div> 
+            <h5>Child Component</h5>
+            <hr>
+            <h1 class="greeting"></h1>
+            <p>Fullname: {{fname}}</p>
+            <p>Enrolled: {{enr}}</p>
+            <p>Gender: {{gend}}</p>
+            <hr>
+            <button (click)= "onChange(childMessage)"  type="button" mat-raised-button color="primary">Approved</button>
+            <button (click)= "disapproved(childMessage)" type="button" mat-raised-button color="warn">Disapproved</button>
+        </div>
+    </mat-card>
+</div>

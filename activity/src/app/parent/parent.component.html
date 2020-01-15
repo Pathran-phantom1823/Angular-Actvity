@@ -1,0 +1,33 @@
+<div>
+    <mat-card>
+        <div>
+            <div class="row">
+                <div class="column" style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);">
+                    <mat-card class="card">
+                        <div>
+                            <h5>Parent Data</h5>
+                            <p>Message From Child: {{childMessage}}</p>
+                            <input [(ngModel)]="message"><br><br>
+                            <button (click)="onChange()" type="button"  mat-raised-button color="primary">Send</button>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="column" style="background-image: linear-gradient(to right top, #0856e9, #0094ff, #00bfff, #00dfa4, #29f60a);">
+                    <app-child (childEvent)="childMessage=$event" [parentMessage]="parentMessage"></app-child>
+                </div>
+
+            </div>
+        </div>
+    </mat-card>
+</div>
+<!-- <div>
+            <mat-card>
+                <div> 
+                    <h5>Parent Data</h5>
+                    <h1 class="greeting"></h1>
+                    <p>Message From Child: {{childMessage}}</p>
+                    <input [(ngModel)]="parentMessage" ><br><br>
+                    <button (click)= "onChange(parentMessage)" type="button" [style.background-color]="isSubmit? 'blue':'red'">Submit</button>
+                </div>
+            </mat-card>
+        </div> -->
