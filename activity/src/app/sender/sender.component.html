@@ -9,37 +9,42 @@
                             <hr>
                             <label for="fullname">Fullname:</label>
                             <input class="form-control" [(ngModel)]="fullname" type="text" id="fullname"><br><br>
-                            <label for="enrolled">Enrolled:</label>
-                            <input [(ngModel)]="enrolled" type="checkbox" id="enrolled" (change)="toggleEditable($event)"><br><br>
+                            <div class="custom-control custom-checkbox">
+                                <input [(ngModel)]="enrolled" (change)="toggleEditable($event)" type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                                <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
+                            </div><br>
+                            <!-- <label for="enrolled">Enrolled:</label>
+                            <input [(ngModel)]="enrolled" type="checkbox" id="enrolled"
+                                (change)="toggleEditable($event)"><br><br> -->
                             <label for="gender">Gender:</label>
                             <select [(ngModel)]="gender" class="browser-default custom-select">
                                 <option *ngFor="let item of list" [value]="item">{{item}}</option>
                             </select><br><br>
-                            <button (click)="onChange()" type="button"  mat-raised-button color="primary">Send</button><br>
+                            <button (click)="onChange()" type="button" mat-raised-button color="primary">Send</button><br>
                             <h5 *ngIf="childMessage" class="notif">{{childMessage}}!!</h5>
                         </div>
                     </mat-card>
                     <mat-card class="card">
                         <h5>Disapproved Students:</h5>
                         <div>
-                                <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Enrolled</th>
-                                                <th>Gender</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr  *ngFor="let each of disapprovedstudents">
-                                                <td>{{each.id}}</td>
-                                                <td>{{each.fullname}}</td>
-                                                <td>{{each.enrolled}}</td>
-                                                <td>{{each.gender}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Enrolled</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let each of disapprovedstudents">
+                                        <td>{{each.id}}</td>
+                                        <td>{{each.fullname}}</td>
+                                        <td>{{each.enrolled}}</td>
+                                        <td>{{each.gender}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <!-- <ul>
                                 <li *ngFor="let each of disapprovedstudents">{{each}}</li>
                             </ul> -->
@@ -47,11 +52,12 @@
                     </mat-card>
                 </div>
                 <div class="col-sm-4">
-                    <app-receiver (infoEvent) = "disapprovedstudents = $event" (childEvent)="childMessage=$event" [fname]="fname" [enr]="enr" [gend]="gend"></app-receiver>
+                    <app-receiver (infoEvent)="disapprovedstudents = $event" (childEvent)="childMessage=$event" [fname]="fname"
+                        [enr]="enr" [gend]="gend"></app-receiver>
                 </div>
 
             </div>
         </div>
     </mat-card>
-    
+
 </div>
