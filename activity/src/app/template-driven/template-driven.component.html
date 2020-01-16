@@ -1,12 +1,12 @@
 
     <mat-card class="container">
-        <h1 class="header">Template Driven Form</h1>
+        <h1 class="header">Template-Driven Form</h1>
         <form #form="ngForm" (ngSubmit)="onSubmit()" [hidden]="isSubmit">
             <label>First Name:</label>
             <input name="name" [(ngModel)]="fname" required minlength="4" #name="ngModel" class="form-control">
             <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
                 <div *ngIf="name.errors.required">
-                    This Field is Required
+                    This Field is Required, Pls. FillUp this Field
                 </div>
                 <div *ngIf="name.errors.minlength">
                     Must contain 4 characters
@@ -18,7 +18,7 @@
             <input name="email" [(ngModel)]="email" required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  #emailAdd="ngModel" class="form-control"><br>
             <div *ngIf="emailAdd.invalid && (emailAdd.dirty || emailAdd.touched)" class="alert alert-danger">
                     <div *ngIf="emailAdd.errors.required">
-                        This Field is Required
+                        This Field is Required, Pls. FillUp this Field
                     </div>
                     <div *ngIf="emailAdd.errors.pattern">
                         Invalid Email
@@ -31,7 +31,7 @@
             </select><br>
             <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
                     <div *ngIf="gender.errors.required">
-                        This Field is Required
+                        This Field is Required, Please Fill Up this Field
                     </div>
                 </div><br>
 
