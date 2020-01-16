@@ -1,0 +1,36 @@
+<mat-card class="container">
+    <h1 class="header">Data Driven Form</h1>
+    <hr>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <label>First Name:</label>
+        <input type="text" class="form-control" formControlName="fname" required>
+        <label>Last Name:</label>
+        <input type="text" class="form-control" formControlName="lname" required>
+        <label>Email:</label>
+        <input type="email" class="form-control" formControlName="email" required><br>
+        <mat-card>
+            <div class="row" formGroupName="address">
+                <div class="column">
+                    <label>Street:</label>
+                    <input type="text" class="form-control" formControlName="street" required>
+                </div>
+                <div class="column">
+                    <label>City:</label>
+                    <input type="text" class="form-control" formControlName="city" required>
+                </div>
+                <div class="column">
+                    <label>State:</label>
+                    <input type="text" class="form-control" formControlName="state" required>
+                </div>
+                <div class="column">
+                    <label>ZipCode:</label>
+                    <input type="text" class="form-control" formControlName="zip" required>
+                </div>
+            </div>
+        </mat-card>
+        <button type="submit" [disabled]="!reactiveForm.valid" mat-raised-button color="primary">Submit</button>
+    </form>
+    <div *ngFor="let item of info">
+        <p>{{item}}</p>
+    </div>
+</mat-card>

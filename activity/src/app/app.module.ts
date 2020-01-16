@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,10 @@ import { FormsModule } from '@angular/forms';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './receiver/receiver.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { DataDrivenComponent } from './data-driven/data-driven.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -31,7 +36,9 @@ import {MatTableModule} from '@angular/material/table';
     ParentComponent,
     ChildComponent,
     SenderComponent,
-    ReceiverComponent
+    ReceiverComponent,
+    TemplateDrivenComponent,
+    DataDrivenComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -42,7 +49,10 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
-    MatTableModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

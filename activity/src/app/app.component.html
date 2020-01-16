@@ -1,9 +1,22 @@
-
-
 <!-- <app-form></app-form> -->
-Activitty4
-<app-parent></app-parent><br>
-Activity5 & 6
-<app-sender></app-sender>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Angular</span>
+        <span class="example-spacer"></span>
+        <button mat-button (click)="[show3 = true,show4 = false, show5 = false, show71 = false, show72 = false]">Activity 3</button>
+        <button mat-button (click)="[show3 = false,show4 = true, show5 = false, show71 = false, show72 = false]">Activity 4</button>
+        <button mat-button (click)="[show3 = false,show4 = false, show5 = true, show71 = false, show72 = false]">Activity 5&6</button>
+        <button mat-button [matMenuTriggerFor]="menu">Form</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = true, show72 = false]">Template Driven Form</button>
+            <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = false, show72 = true]">Data Driven Form</button>
+          </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
+<app-form [hidden]="!show3"></app-form>
+<app-parent [hidden]="!show4"></app-parent><br>
+<app-sender  [hidden]="!show5"></app-sender>
+<app-template-driven [hidden]="!show71"></app-template-driven>
+<app-data-driven [hidden]="!show72"></app-data-driven>
 
 <router-outlet></router-outlet>
