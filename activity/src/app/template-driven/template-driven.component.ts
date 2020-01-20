@@ -28,10 +28,6 @@ export class TemplateDrivenComponent implements OnInit {
     
   }
 
-  // store(){
-  //   for(var i = 0; i < )
-  // }
-  
 
   onSubmit(){
     this.storeInfo();

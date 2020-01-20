@@ -5,23 +5,24 @@
         <span class="example-spacer"></span>
         <button mat-button [matMenuTriggerFor]="mennu">Activities</button>
         <mat-menu #mennu="matMenu">
-            <button mat-menu-item (click)="[show3 = true,show4 = false, show5 = false, show71 = false, show72 = false]">Activity
+            <button mat-menu-item (click)="[show3 = true,show4 = false, show5 = false, show71 = false, show72 = false, showpr1 = false]">Activity
                 3</button>
-            <button mat-menu-item (click)="[show3 = false,show4 = true, show5 = false, show71 = false, show72 = false]">Activity
+            <button mat-menu-item (click)="[show3 = false,show4 = true, show5 = false, show71 = false, show72 = false, showpr1 = false]">Activity
                 4</button>
-            <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = true, show71 = false, show72 = false]">Activity
+            <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = true, show71 = false, show72 = false, showpr1 = false]">Activity
                 5&6</button>
             <button mat-menu-item [matMenuTriggerFor]="menu">Form</button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = true, show72 = false]">Template
+                <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = true, show72 = false, showpr1 = false]">Template
                     Driven Form</button>
-                <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = false, show72 = true]">Data
+                <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = false, show72 = true, showpr1 = false]">Data
                     Driven Form</button>
             </mat-menu>
         </mat-menu>
-        <button mat-button [matMenuTriggerFor]="mennu">Projects</button>
-        <mat-menu>
-
+        <button mat-button [matMenuTriggerFor]="menu2">Projects</button>
+        <mat-menu #menu2="matMenu">
+            <button mat-menu-item (click)="[show3 = false,show4 = false, show5 = false, show71 = false, show72 = false, showpr1 = true]">Data
+                Project 1</button>
         </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
@@ -30,5 +31,6 @@
 <app-sender [hidden]="!show5"></app-sender>
 <app-template-driven [hidden]="!show71"></app-template-driven>
 <app-data-driven [hidden]="!show72"></app-data-driven>
+<app-parent-form [hidden]="!showpr1"></app-parent-form>
 
 <router-outlet></router-outlet>

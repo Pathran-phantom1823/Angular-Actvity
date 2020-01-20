@@ -1,0 +1,28 @@
+<div>
+    <mat-card class="card">
+            <h5><strong>List of Students:</strong><span>{{student.length}}</span>
+               </h5>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let each of student; let i=index">
+                        <td>{{i + 1}}</td>
+                        <td>{{each.fullname}}</td>
+                        <td>{{each.email}}</td>
+                        <td>{{each.gender}}</td>
+                        <td>{{each.address}}</td>
+                        <td><button mat-button color="basic" (click)="onEdit(each)"><i class="fas fa-edit"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+    </mat-card>
+</div>

@@ -22,6 +22,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { DataDrivenComponent } from './data-driven/data-driven.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { ParentFormComponent } from './parent-form/parent-form.component';
+import { ChildListComponent } from './child-list/child-list.component';
 
 
 
@@ -38,7 +40,9 @@ import {MatMenuModule} from '@angular/material/menu';
     SenderComponent,
     ReceiverComponent,
     TemplateDrivenComponent,
-    DataDrivenComponent
+    DataDrivenComponent,
+    ParentFormComponent,
+    ChildListComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
