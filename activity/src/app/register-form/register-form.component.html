@@ -1,0 +1,63 @@
+<div class="row">
+        <div class="col-sm-4">
+            <mat-card class="card">
+                <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                   
+                    <h5><i class="fas fa-users" id="title"></i> &nbsp;&nbsp;&nbsp;Registration Form</h5>
+                    <span *ngIf="isEdit">ID: {{id}}</span>
+                    <hr>
+                    <label for="fullname"><i class="fas fa-user"></i>&nbsp;&nbsp;Fullname:</label>
+                    <input class="form-control" name="fname" minlength="4" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" #name="ngModel" [(ngModel)]="fname" type="text"
+                        id="fullname" required>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <div *ngIf="name.errors.required">
+                            This Field is Required, Pls. FillUp this Field
+                        </div>
+                        <div *ngIf="name.errors.minlength">
+                            Must contain 4 characters
+                        </div>
+                        <div *ngIf="name.errors.pattern">
+                                Must contain All Letters
+                            </div>
+                    </div><br>
+
+                    <label for="uname"><i class="fas fa-venus-mars"></i>&nbsp;&nbsp;Username:</label>
+                    <input class="form-control" name="uname" #user="ngModel" [(ngModel)]="username" type="text" required><br>
+                    <div *ngIf="user.invalid && (user.dirty || user.touched)" class="alert alert-danger">
+                        <div *ngIf="user.errors.required">
+                            This Field is Required, Pls. FillUp this Field
+                        </div>
+                    </div><br>
+
+                    <label for="email"><i class="fas fa-envelope"></i>&nbsp;&nbsp;Email:</label>
+                    <input class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        #emailAddress="ngModel" [(ngModel)]="emailAdd" type="email" id="email" required>
+                    <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger">
+                        <div *ngIf="emailAddress.errors.required">
+                            This Field is Required, Pls. FillUp this Field
+                        </div>
+                        <div *ngIf="emailAddress.errors.pattern">
+                            Invalid Email
+                        </div>
+                    </div><br>
+                    <label for="web"><i class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;Website:</label>
+                    <input class="form-control" name="web" #webs="ngModel" [(ngModel)]="website" type="text" required>
+                    <div *ngIf="webs.invalid && (webs.dirty || webs.touched)" class="alert alert-danger">
+                        <div *ngIf="webs.errors.required">
+                            This Field is Required, Pls. FillUp this Field
+                        </div>
+                    </div><br>
+                    <button type="submit" [hidden]="!isSubmit" [disabled]="!form.form.valid" mat-raised-button color="primary">Submit</button>
+                    <button type="button"  class="btn btn-danger" (click)="reset(form)">Clear</button>
+                    <button type="submit" [hidden]="isSubmit" [disabled]="!form.form.valid" mat-raised-button color="primary">Save</button>
+                    <br>
+                </form>
+            </mat-card>
+        </div>
+        <div class="col-sm-8">
+            <div>
+                <app-user-list [values]='values' (showEvent)="isEdit = true" (infoEvent)="onEdit($event)"></app-user-list>
+            </div>
+        </div>
+    </div>
+    

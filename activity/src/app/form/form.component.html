@@ -3,7 +3,7 @@
         <h1>{{value}}</h1>
         <h2 [hidden]="isSubmit">{{title}}</h2>
         <form>
-            <input [hidden]="isSubmit"  #input><br><br>
+            <input [hidden]="isSubmit" class="form-control"#input><br><br>
             <button [hidden]="isSubmit" (click)="submit(input.value)" type="button" class="btn" [style.background-color]="isSubmit? 'blue':'red'">Submit</button>
         </form>
     </mat-card>

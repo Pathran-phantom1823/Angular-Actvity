@@ -1,0 +1,19 @@
+{
+  "name": "activity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pathran-phantom1823/Angular-Actvity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pathran-phantom1823/Angular-Actvity/issues"
+  },
+  "homepage": "https://github.com/Pathran-phantom1823/Angular-Actvity#readme"
+}

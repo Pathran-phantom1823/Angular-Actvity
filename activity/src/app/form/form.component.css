@@ -30,11 +30,13 @@
 form{
     justify-content: center;
     display: flex;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
 }
 #formcard{
     margin-top:10%;
     max-width: 400px;
     margin-left: 70vh;
+   
     /* background-color: yellowgreen */
 }
 h1{

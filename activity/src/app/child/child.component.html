@@ -4,7 +4,7 @@
                 <h5>Child Data</h5>
                 <h1 class="greeting"></h1>
                 <p>Message From Parent: {{parentMessage}}</p>
-                <input [(ngModel)]="childMessage" ><br><br>
+                <input [(ngModel)]="childMessage" class="form-control"><br><br>
                 <button (click)= "onChange(childMessage)" type="button" mat-raised-button color="primary">Reply</button>
             </div>
         </mat-card>

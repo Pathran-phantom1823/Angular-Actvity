@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -12,6 +15,8 @@ import {MatCardModule} from '@angular/material/card';
 import { FormComponent } from './form/form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +29,10 @@ import { DataDrivenComponent } from './data-driven/data-driven.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ParentFormComponent } from './parent-form/parent-form.component';
 import { ChildListComponent } from './child-list/child-list.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { ViewComponent } from './view/view.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -42,7 +51,11 @@ import { ChildListComponent } from './child-list/child-list.component';
     TemplateDrivenComponent,
     DataDrivenComponent,
     ParentFormComponent,
-    ChildListComponent
+    ChildListComponent,
+    UserListComponent,
+    RegisterFormComponent,
+    ViewComponent,
+    ErrorComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -56,7 +69,9 @@ import { ChildListComponent } from './child-list/child-list.component';
     ReactiveFormsModule,
     MatTableModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

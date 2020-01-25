@@ -25,7 +25,7 @@
     background: inherit;
   }
   .card{
-    background-color: rgba(0, 0, 0, .5);
+    /* background-color: rgba(0, 0, 0, .5); */
     /* width:  60%; */
     box-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px white;
     margin-left: auto;
@@ -50,7 +50,7 @@
     padding-bottom: 12px;
     text-align: left;
     background-color: skyblue;
-    color: white;
+    /* color: white; */
   }
   .notif{
     color: green
@@ -58,11 +58,9 @@
 
   h5{
     font-family: cursive;
-    color:white
+    /* color:white */
   }
-  label{
-    color: white
-  }
+  
 
   .row{
     margin-right: auto;
@@ -71,5 +69,8 @@
     margin-top: 3em;
   }
 
+.container{
+  margin-top: 10px;
+}
 
  

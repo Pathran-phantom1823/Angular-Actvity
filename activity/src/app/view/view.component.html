@@ -1,0 +1,14 @@
+
+<div class="container">
+    <mat-card *ngFor="let item of userInfo" id="card">
+            <h2><i class="fas fa-user"></i>&nbsp;&nbsp;User Info:</h2>
+            <hr>
+        <h1><strong>ID:</strong> {{item.id}}</h1>
+        <h1><strong>Name:</strong> {{item.name}}</h1>
+        <h1><strong>Email:</strong> {{item.email}}</h1>
+        <h1><strong>Website:</strong> {{item.website}}</h1>
+
+<a [routerLink]="['/registerform']" routerLinkActive="router-link-active"><button class="btn btn-primary">Go To Form</button></a>
+
+    </mat-card>
+</div>

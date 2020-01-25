@@ -32,6 +32,7 @@ export class ParentFormComponent implements OnInit {
   onChange(form) {
    
     if (this.edit == false) {
+      this.isSubmit = false
       this.Id = this.studentData.length + 1
       this.data = new Student;
       this.data.id = this.Id
