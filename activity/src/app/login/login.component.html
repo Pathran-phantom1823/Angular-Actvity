@@ -1,0 +1,20 @@
+<mdb-card >
+    <div class="view view-cascade gradient-card-header blue-gradient" id="header"><br>
+      <h2 class="card-header-title" class="text-center">User Login</h2>
+    </div>
+    <mdb-card-body>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="user"  formControlName="username" required class="form-control" /><br>
+        <mat-error *ngIf="isFieldInvalid('username')">
+                Please inform your user name
+            </mat-error>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="pass" formControlName="password"  class="form-control" /><br>
+        <mat-error *ngIf="isFieldInvalid('username')">
+                Please inform your password
+        </mat-error>
+        <button class="btn btn-primary">Login</button>
+      </form>
+    </mdb-card-body>
+</mdb-card>

@@ -33,6 +33,10 @@ import { UserListComponent } from './user-list/user-list.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ViewComponent } from './view/view.component';
 import { ErrorComponent } from './error/error.component';
+import { LoginComponent } from './login/login.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AuthGuard } from "./auth.guard";
+import { AuthService } from './auth.service';
 
 
 
@@ -55,7 +59,9 @@ import { ErrorComponent } from './error/error.component';
     UserListComponent,
     RegisterFormComponent,
     ViewComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent,
+    NavigationComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -73,7 +79,7 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

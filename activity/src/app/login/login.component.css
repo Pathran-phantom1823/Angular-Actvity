@@ -1,0 +1,14 @@
+.card{
+    width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em
+}
+#header{
+    height: 5em;
+    border-radius: 5px;
+}
+h2{
+    font-weight: bold;
+    color:white
+}

@@ -7,11 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'activity';
-  show3 = false; 
-  show4 = false;
-  show5 = false
-  show71 = false
-  show72 = false
-  showpr1 = false;
 
 }

@@ -10,13 +10,16 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RegisterFormComponent } from "./register-form/register-form.component";
 import { ViewComponent } from "./view/view.component";
 import { ErrorComponent } from "./error/error.component";
+import { LoginComponent } from "./login/login.component";
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'registerform', component: RegisterFormComponent },
   { path: 'view/:id', component: ViewComponent },
   { path: 'error', component: ErrorComponent },
-  { path: '*', component: ErrorComponent },
+  { path: '**', redirectTo: '' },
   { path: 'activity3', component: FormComponent },
   { path: 'activity4', component: ParentComponent },
   { path: 'activity5', component: SenderComponent },
